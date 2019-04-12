@@ -15,7 +15,7 @@ class SeastarConan(ConanFile):
     generators = "cmake"
 
     def source(self):
-        self.run("git clone https://github.com/scylladb/seastar.git")
+        self.run("git clone --recursive https://github.com/scylladb/seastar.git")
         self.run("cd seastar && git checkout d863ed682c66d10a2b2f3afa8725fd91fa5bceb5")
 
 
