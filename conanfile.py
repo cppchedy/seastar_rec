@@ -25,13 +25,14 @@ class SeastarConan(ConanFile):
         #cmake.build()
 
         # Explicit way:
+        print(self.source_folder)
         self.run('export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:%s/build/_cooking/installed/lib' 
                     % self.source_folder)
         self.run('./cooking.sh -- -DSeastar_DPDK=ON -DCMAKE_BUILD_TYPE=Release')
 
     def package(self):
         self.copy("*.h", dst="include", src="seastar")
-        self.copy("*hello.lib", dst="lib", keep_path=False)
+        self.copy("*seastar.lib", dst="lib", keep_path=False)
         self.copy("*.dll", dst="bin", keep_path=False)
         self.copy("*.so", dst="lib", keep_path=False)
         self.copy("*.dylib", dst="lib", keep_path=False)
