@@ -46,7 +46,7 @@ PING_LOOP_PID=$!
 # your_build_command_2 >> $BUILD_OUTPUT 2>&1
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:%s/seastar/build/_cooking/installed/lib
 ./seastar/cooking.sh -- -DSeastar_DPDK=ON -DCMAKE_BUILD_TYPE=Release >> $BUILD_OUTPUT 2>&1
-cd seastar/build
+cd build
 ninja >> $BUILD_OUTPUT 2>&1
 
 # The build finished without returning an error so dump a tail of the output
