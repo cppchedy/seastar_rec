@@ -70,7 +70,7 @@ kill $PING_LOOP_PID
         self.run("echo '" +  self.logworkaround % self.build_folder + "' > seastar/build.sh" )
         self.run("cat seastar/build.sh")
         self.run("chmod u+x seastar/build.sh")
-        self.run("./seastar/build.sh")
+        self.run(" bash seastar/build.sh")
 
     def package(self):
         self.copy("*.h", dst="include", src="seastar")
