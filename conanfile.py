@@ -28,7 +28,7 @@ class SeastarConan(ConanFile):
         print(self.source_folder)
         self.run('export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:%s/build/_cooking/installed/lib' 
                     % self.source_folder)
-        self.run('./seastar/cooking.sh -- -DSeastar_DPDK=ON -DCMAKE_BUILD_TYPE=Release' % self.build_folder)
+        self.run('./seastar/cooking.sh -- -DSeastar_DPDK=ON -DCMAKE_BUILD_TYPE=Release')
 
     def package(self):
         self.copy("*.h", dst="include", src="seastar")
