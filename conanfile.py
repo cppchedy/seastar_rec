@@ -28,8 +28,8 @@ class SeastarConan(ConanFile):
         print(self.source_folder)
         self.run('export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:%s/build/_cooking/installed/lib' 
                     % self.source_folder)
-        self.run('ls %s' % self.source_folder)
-        self.run('ls %s' % self.build_folder)
+        self.run('ls %s/seastar' % self.source_folder)
+        self.run('ls %s/seastar' % self.build_folder)
         self.run('.%s/seastar/cooking.sh -- -DSeastar_DPDK=ON -DCMAKE_BUILD_TYPE=Release' % self.build_folder)
 
     def package(self):
