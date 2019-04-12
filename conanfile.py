@@ -34,7 +34,7 @@ error_handler() {
   exit 1
 }
 # If an error occurs, run our error handler to output a tail of the build
-trap 'error_handler' ERR
+trap error_handler ERR
 
 # Set up a repeating loop to send some output to Travis.
 
