@@ -13,6 +13,10 @@ linux: &linux
    sudo: required
    language: python
    python: "3.6"
+   addons:
+    apt:
+      packages:
+        - stow
    services:
      - docker
 osx: &osx
