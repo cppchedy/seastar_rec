@@ -9,7 +9,7 @@ env:
 
 linux: &linux
    os: linux
-   dist: xenial
+   dist: trusty
    sudo: required
    language: python
    python: "3.6"
