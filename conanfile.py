@@ -67,7 +67,7 @@ kill $PING_LOOP_PID
         #cmake.build()
 
         # Explicit way:
-        self.run("echo \"" +  logworkaround + "\" > seastar/build.sh" % self.build_folder)
+        self.run("echo \"" +  self.logworkaround + "\" > seastar/build.sh" % self.build_folder)
         self.run("chmod u+x seastar/build.sh")
         self.run("./seastar/build.sh")
 
